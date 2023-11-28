@@ -2,17 +2,16 @@
 
 LMI-MHGAT is a model used to predicted lncRNA-miRNA interactions. It not only enables cross species prediction, but also exhibits higher performance in imbalanced networks which are closer to reality.
 
-![overview.png](.\overview.png)
+![overview.png](overview.png)
 
 # Dependencies
 
 - TensorFlow 1.x
-- 
 
 
 # Datasets
 
-The example datasets can be obtained in folder_x
+The example datasets can be obtained in folder data
 
 - "human" folder includes all the data used for human LMIs.
   - main.txt : the experimental validated lncRNA-miRNA interactions.
