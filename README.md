@@ -13,24 +13,9 @@ LMI-MHGAT is a model used to predicted lncRNA-miRNA interactions. It not only en
 
 The example datasets can be obtained in folder data
 
-- "human" folder includes all the data used for human LMIs.
+- "data" folder includes all the data used for human LMIs.
   - main.txt : the experimental validated lncRNA-miRNA interactions.
   - extra.txt : the other six layers data, including lncRNA-lncRNA sequence similarity data, lncRNA-lncRNA co-expression data, miRNA-miRNA sequence similarity data, miRNA-miRNA co-expression data, miRNA-mRNA interaction data and lncRNA-mRNA interaction data.
-  - valid_false_data_by_edge.txt : validation set negative samples.
-  - testing_false_data_by_edge.txt : test set negative samples.
-- "imbalanced" folder includes all the data used for imbalanced networks.
-  - main.txt : the same as human/main.txt
-  - extra.txt : the same as human/extra.txt
-  - valid_false_data_by_edge.txt : validation set negative samples including 33% of all the negative samples.
-  - testing_false_data_by_edge.txt : test set negative samples including 67% of all the negative samples.
-- "rat" folder includes all the data used for rat LMIs.
-  - main.txt : the experimental validated lncRNA-miRNA interactions.
-  - extra.txt : the other four layers data, including lncRNA-lncRNA sequence similarity data, lncRNA-lncRNA co-expression data, miRNA-miRNA sequence similarity data, miRNA-miRNA co-expression data.
-  - valid_false_data_by_edge.txt : validation set negative samples.
-  - testing_false_data_by_edge.txt : test set negative samples.
-- "ath" folder includes all the data used for Arabidopsis thaliana LMIs.
-  - main.txt : the experimental validated lncRNA-miRNA interactions.
-  - extra.txt : the other four layers data, including lncRNA-lncRNA sequence similarity data, lncRNA-lncRNA co-expression data, miRNA-miRNA sequence similarity data, miRNA-miRNA co-expression data.
   - valid_false_data_by_edge.txt : validation set negative samples.
   - testing_false_data_by_edge.txt : test set negative samples.
 
@@ -41,7 +26,7 @@ The example datasets can be obtained in folder data
 **to use human datasets**
 
 ```
-python ./src/main.py --input ./data/human --eval-type 1 --kfold 5
+python ./src/main.py --input ./data --eval-type 1 --kfold 5
 ```
 
 main parameters introduction:
@@ -58,26 +43,6 @@ main parameters introduction:
 --kfold	5				#k-fold cross validation, default is 5
 --att-head 1			#the number of attention head
 ```
-
-**to use imbalanced datasets**
-
-```
-python ./src/main.py --input ./data/imbalanced --eval-type 1 --dimensions 300 --edge-dim 30 --att-dim 40 --walk-length 20 --att-head 4 --negative-samples 100 --neighbor-samples 60
-```
-
-**to use rat datasets**
-
-```
-python ./src/main.py --input ./data/rat --eval-type 1 --kfold 5
-```
-
-**to use ath datasets**
-
-```
-python ./src/main.py --input ./data/ath --eval-type 1 --kfold 5 --edge-dim 30 --att-dim 10 --neighbor-samples 20
-```
-
-
 
 #### **Applying your own datasets to LMI-MHGAT**
 
